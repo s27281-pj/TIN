@@ -1,0 +1,273 @@
+/* Resetowanie stylów */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Kolorystyka i styl dla nagłówków i paragrafów */
+h1, h2, h3 {
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+h1 {
+  color: #fffdf0;
+  font-size: 55px;
+}
+
+h2 {
+  color: #ffdf09;
+  font-size: 36px;
+}
+
+h3 {
+  color: #ffdf09;
+  font-size: 18px;
+}
+
+p {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.photo {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.5em;
+  text-align: justify;
+  color: blue;
+}
+
+.text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #ffdf09;
+}
+
+.sidebar-text {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: black;
+  overflow: hidden;
+}
+
+/* Układ strony */
+.container {
+  width: 100%; /* Rozciągnij kontener na całą szerokość okna przeglądarki */
+  display: flex; /* Użyj flexbox do układu sekcji obok siebie */
+
+}
+
+/* Sekcje strony */
+.top {
+  background-color: #fff08a;
+  overflow: hidden;
+  width: 100%;
+  float: right;
+}
+
+.bottom-right {
+  background-color: #fff7c0;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  float: right;
+  text-align: center;
+  padding: 0px;
+}
+
+
+
+/* Obrazki */
+img {
+  max-width: 41%;
+  height: auto;
+  float: right;
+}
+
+.photo-content {
+  padding: 0 0 60px 0;
+}
+
+/* Pasek boczny z nawigacją */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 0px 0px;
+  text-decoration: none;
+}
+
+li {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  opacity: 0.6;
+}
+
+/* Układ siatki */
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  background-color: #2196f3;
+  padding: 0;
+  width: 100%;
+  float: right;
+  overflow: hidden;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 0;
+  font-size: 30px;
+}
+
+/* Zmiana koloru tła co drugiego wiersza w trzech kolumnach */
+.grid-container > div:nth-child(6n+4),
+.grid-container > div:nth-child(6n+5),
+.grid-container > div:nth-child(6n+6) {
+  background-color: rgba(255, 0, 0, 0.8); /* Tutaj możesz zmienić kolor tła na inny */
+}
+
+/* Formularz */
+.form-whole {
+  text-align: center;
+  margin-top: 0px;
+  width: 100%;
+  float: right;
+  background-color: red;
+  
+}
+
+.form-left{
+  width: 50%;
+  float: left;
+  background-color: red;
+}
+.form-right{
+  width: 50%;
+  float: right;
+  background-color: red;
+}
+
+label, input, textarea, select {
+  display: block;
+  margin: 10px 0;
+}
+
+.sidebar {
+  background-color: #f30c87;
+  width: 100%;
+  float: left;
+  opacity: 0.5;
+  background-image: url('zd.jpg');
+  height: 55vh;
+}
+
+.bottom-left {
+ 
+  width: 25%;
+  float: left;
+  height: 100vh;
+  position: relative;
+  
+  background-size: cover;
+  background-position: center;
+  
+}
+
+
+
+div.scroll {
+  height: 100vh; /* Ustawić wysokość sekcji "scroll" na 100% wysokości okna przeglądarki */
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+  padding: 0px;
+  float: right;
+  width: 75%;
+
+}
+
+
+
+
+/*DROPDOWN*/
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  height: 45vh;
+  background-color: #f1f1f1;
+  border: 1px solid #555;
+  display: flex;
+  flex-direction: column; /* Wyświetl elementy jeden pod drugim */
+}
+
+li {
+  text-align: left;
+  position: relative;
+}
+
+a {
+  display: block;
+  color: #000;
+  padding: 10px 20px;
+  text-decoration: none;
+  
+}
+
+.hidden-links {
+  display: block;
+  color: #c51b1b;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.hidden-links a {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  background-color: #da6d15;
+  border: 1px solid #555;
+  display: flex;
+  flex-direction: column; /* Wyświetl elementy jeden pod drugim */
+}
+
+li:hover .hidden-links {
+  display: block;
+}
+
+
+
+
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  width: 100%; /* Rozciągnij stopkę na całą szerokość strony */
+  clear: both; /* Dodaj clear:both, aby umieścić stopkę pod innymi elementami */
+  background-color: green;
+}
