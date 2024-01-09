@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela Samochodów</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        const auta = [
+            { rok: 2010, przebieg: 120000, cena_wyjsciowa: 20000, cena_koncowa: 18000 },
+            { rok: 2015, przebieg: 90000, cena_wyjsciowa: 25000, cena_koncowa: 23000 },
+            { rok: 2018, przebieg: 50000, cena_wyjsciowa: 30000, cena_koncowa: 29000 },
+            
+        ];
+
+        function stworzTabele(auta) {
+            const tabela = document.createElement('table');
+
+            const naglowek = tabela.insertRow();
+            ['Rok', 'Przebieg', 'Cena Wyjściowa', 'Cena Końcowa'].forEach(text => {
+                const cell = naglowek.insertCell();
+                cell.textContent = text;
+            });
+
+            auta.forEach(auto => {
+                const wiersz = tabela.insertRow();
+                Object.values(auto).forEach(value => {
+                    const cell = wiersz.insertCell();
+                    cell.textContent = value;
+                });
+            });
+
+            return tabela;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabela = stworzTabele(auta);
+            document.body.appendChild(tabela);
+        });
+    </script>
+
+</body>
+</html>

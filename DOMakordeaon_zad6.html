@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akordeon</title>
+    <style>
+        .akordeon .akordeon-sekcja {
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+        }
+
+        .akordeon .akordeon-sekcja h3 {
+            padding: 10px;
+            margin: 0;
+            cursor: pointer;
+            background-color: #f7f7f7;
+        }
+
+        .akordeon .akordeon-sekcja .akordeon-tresc {
+            padding: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="akordeon">
+    <div class="akordeon-sekcja">
+        <h3>Sekcja 1</h3>
+        <div class="akordeon-tresc">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec diam odio, mattis at justo vel, placerat consectetur felis. Aenean elementum facilisis erat ac placerat. Integer iaculis erat dolor, eget gravida sem ultricies vitae. Praesent eleifend eleifend dictum. Cras suscipit eros in quam finibus ultricies. Suspendisse ornare finibus justo vitae pretium. In turpis urna, pellentesque non aliquet vitae, pretium eget augue.</p>
+        </div>
+    </div>
+    <div class="akordeon-sekcja">
+        <h3>Sekcja 2</h3>
+        <div class="akordeon-tresc">
+            <p>Maecenas ultrices hendrerit leo tempus accumsan. Maecenas urna ligula, consequat vel gravida a, molestie eget arcu. Morbi maximus vitae arcu id lacinia. Ut dui felis, eleifend at fringilla ac, congue et tortor. Suspendisse orci turpis, fringilla sed massa vitae, feugiat accumsan eros. Donec magna magna, imperdiet sit amet tortor id, vestibulum bibendum sapien. Aliquam justo diam, bibendum eu turpis eu, volutpat tincidunt purus.</p>
+        </div>
+    </div>
+    <div class="akordeon-sekcja">
+        <h3>Sekcja 3</h3>
+        <div class="akordeon-tresc">
+            <p>Morbi varius lorem facilisis, semper odio eget, viverra magna. Quisque augue metus, consequat sed rhoncus in, ullamcorper et risus. Praesent a metus nec dolor euismod lobortis eleifend id risus. In volutpat quam nisl, sit amet venenatis enim aliquet vel. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu ultrices felis. Aenean in dignissim mauris, ac iaculis dui. Quisque non orci id metus semper commodo. Morbi ultricies malesuada ante, ac facilisis libero cursus id. Phasellus sit amet metus a diam tristique euismod faucibus vel nisl. Etiam nisl velit, rutrum sit amet porttitor sed, elementum ac nunc. Nulla facilisi. Quisque eu eros et diam ullamcorper molestie sit amet quis dui. Cras risus enim, blandit et magna quis, tincidunt aliquet velit.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.akordeon .akordeon-sekcja h3').forEach(naglowek => {
+        naglowek.addEventListener('click', function() {
+            const tresc = this.nextElementSibling;
+            if (tresc.style.display === 'block') {
+                tresc.style.display = 'none';
+            } else {
+                document.querySelectorAll('.akordeon .akordeon-tresc').forEach(innaTresc => {
+                    innaTresc.style.display = 'none';
+                });
+                tresc.style.display = 'block';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

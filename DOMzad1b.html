@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prosta modyfikacja DOM</title>
+  <style>
+    .my-div {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      border: 1px solid black;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <div class="my-div"></div>
+  <div class="my-div"></div>
+  <div class="my-div"></div>
+  <div class="my-div"></div>
+</div>
+
+<button onclick="addDiv()">Dodaj div</button>
+<button onclick="removeDiv()">Usuń div</button>
+<button onclick="changeColor()">Zmień kolor</button>
+<button onclick="changeText()">Zmień tekst</button>
+
+<script>
+  function addDiv() {
+    var newDiv = document.createElement('div');
+    newDiv.className = 'my-div';
+    document.getElementById('container').appendChild(newDiv);
+  }
+
+  function removeDiv() {
+    var divs = document.getElementsByClassName('my-div');
+    if (divs.length > 0) {
+      var removedDiv = divs[0];
+      removedDiv.parentNode.removeChild(removedDiv);
+    }
+  }
+
+  function changeColor() {
+    var divs = document.getElementsByClassName('my-div');
+    if (divs.length >= 3) {
+      divs[2].style.backgroundColor = 'lightblue';
+    }
+  }
+
+  function changeText() {
+    var divs = document.getElementsByClassName('my-div');
+    for (var i = 0; i < divs.length; i++) {
+      divs[i].innerText = 'nowy tekst';
+    }
+  }
+</script>
+
+</body>
+</html>
